@@ -46,19 +46,16 @@ export async function POST(req) {
 		});
 	}
 
-	if (evt.eventType === "user.created") {
-		const user = evt.payload;
-		console.log(`User created: ${user.email}`);
+	if (evt.type === "user.created") {
+		console.log("user created");
 	}
 
 	if (evt.eventType === "user.updated") {
-		const user = evt.payload;
-		console.log(`User updated: ${user.email}`);
+		console.log("user updated");
 	}
 
 	if (evt.eventType === "user.deleted") {
-		const user = evt.payload;
-		console.log(`User deleted: ${user.email}`);
+		console.log("user deleted");
 	}
 
 	return new Response("Webhook received", { status: 200 });
